@@ -21,7 +21,7 @@ body {
     background-color: black;
 }
 
-.gif-container {
+.section-one .gif-container {
     background-color: white;
     height: 100%;
     /* Center bottom */
@@ -31,7 +31,7 @@ body {
     padding: 0 40px;
 }
 
-.gif {
+.section-one .gif {
     /* Move with scroll */
     position: sticky;
     bottom: 60px;
@@ -52,7 +52,7 @@ body {
     position: relative;
 }
 
-.horizontal-container {
+.section-two .horizontal-container {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -89,7 +89,114 @@ body {
 
 /* Walking */
 
-.walking {
+.section-two .walking {
     position: absolute;
     bottom: 50vh;
+}
+
+/* Section three - Wall scroll */
+
+.section-three {
+    height: 5000px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.section-three .left {
+    height: 5000px;
+    width: 100%;
+    background-color: rgb(139, 131, 15);
+}
+
+.section-three .right {
+    height: 5000px;
+    width: 100%;
+    background-color: rgb(139, 131, 15);
+}
+
+.section-three .gif-container {
+    background-color: rgb(189, 189, 189);
+    display: flex;
+    /* Center bottom */
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 40px;
+}
+
+.section-three .gif {
+    position: sticky;
+    bottom: 10px;
+}
+
+/* Section Four */
+
+.section-four {
+    height: calc(100vh * 4);
+    background-color: orange;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.section-four .horizontal-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    overflow-x: visible;
+}
+
+.section-four .one {
+    min-width: 100vw;
+    height: 100vh;
+    background-color: rgb(167, 15, 15);
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.section-four .two {
+    min-width: 100vw;
+    height: 100vh;
+    background-color: rgb(10, 80, 10);
+}
+.section-four .three {
+    min-width: 100vw;
+    height: 100vh;
+    background-color: rgb(151, 151, 12);
+}
+
+.section-four .four {
+    min-width: 100vw;
+    height: 100vh;
+    background-color: rgb(11, 11, 109);
+}
+
+/* Walking */
+
+.section-four .walking {
+    position: absolute;
+    bottom: 50vh;
+}
+
+/* Section five - Wall scroll */
+
+.section-five {
+    height: 8000px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.section-five .gif-container {
+    background-color: rgb(104, 44, 94);
+    height: 100%;
+    width: 100%;
+    /* Center bottom */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.section-five .gif {
+    /*opacity: 0;*/
 }
