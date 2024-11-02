@@ -14,7 +14,7 @@ window.onload = function () {
 
 // GSAP Code
 function start() {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 }
 
 // Section one
@@ -134,133 +134,29 @@ gsap.fromTo(
 
 // Section five
 
-// Move the GIF on zig zag
-// Move 1 - Right
-gsap.fromTo(
-  ".section-five .gif",
-  {
-    x: '0px',
-    y: "0px"
-  },
-  {
-    x: '400px',
-    y: "800px", // Movendo a GIF para cima conforme o scroll
-    ease: "none",
+// Define the motion path (you can customize the path points)
+  const path = [
+    { x: 0, y: 0 },
+    { x: 800, y: 1000 },
+    { x: -800, y: 3000 },
+    { x: 0, y: 6000 },
+  ];
+
+  gsap.to(".section-five .gif", {
     scrollTrigger: {
       trigger: ".section-five .gif-container",
-      start: "top top",
-      end: "1600px bottom",
-      scrub: true,
-      //markers: true
+      start: "top top",  // when the top of the section reaches the top of the viewport
+      end: "4200px bottom",  // when the bottom of the section reaches the bottom of the viewport
+      scrub: 1,  // smooth animation as you scroll
+      markers: true,
     },
-  }
-);
-
-// Move 2 - Left (Middle)
-gsap.fromTo(
-  ".section-five .gif",
-  {
-    x: '400px',
-    y: "800px"
-  },
-  {
-    x: '0px',
-    y: "2000px", // Movendo a GIF para cima conforme o scroll
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".section-five .gif-container",
-      start: "800px top",
-      end: "2800px bottom",
-      scrub: true,
-      //markers: true
+    motionPath: {
+      path: "#path",
+      align: '#path',
+      alignOrigin: [0.5, 0.5],
     },
-  }
-);
-
-// Move 3 - Left
-gsap.fromTo(
-  ".section-five .gif",
-  {
-    x: '0px',
-    y: "2000px"
-  },
-  {
-    x: '-400px',
-    y: "3400px", // Movendo a GIF para cima conforme o scroll
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".section-five .gif-container",
-      start: "1900px top",
-      end: "4000px bottom",
-      scrub: true,
-      //markers: true
-    },
-  }
-);
-
-// Move 4 - Right (Middle)
-gsap.fromTo(
-  ".section-five .gif",
-  {
-    x: '-400px',
-    y: "3400px"
-  },
-  {
-    x: '0px',
-    y: "4800px", // Movendo a GIF para cima conforme o scroll
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".section-five .gif-container",
-      start: "3200px top",
-      end: "5400px bottom",
-      scrub: true,
-      //markers: true
-    },
-  }
-);
-
-// Move 5 - Right
-gsap.fromTo(
-  ".section-five .gif",
-  {
-    x: '0px',
-    y: "4800px"
-  },
-  {
-    x: '400px',
-    y: "6200px", // Movendo a GIF para cima conforme o scroll
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".section-five .gif-container",
-      start: "4500px top",
-      end: "6800px bottom",
-      scrub: true,
-      //markers: true
-    },
-  }
-);
-
-// Move 6 - Left (Middle)
-gsap.fromTo(
-  ".section-five .gif",
-  {
-    x: '400px',
-    y: "6200px"
-  },
-  {
-    x: '0px',
-    y: "7600px", // Movendo a GIF para cima conforme o scroll
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".section-five .gif-container",
-      start: "6000px top",
-      end: "8000px bottom",
-      scrub: true,
-      //markers: true
-    },
-  }
-);
-
+    duration: 0.2
+  });
 
 // --------------------------------------- Rain ---------------------------------------
 
