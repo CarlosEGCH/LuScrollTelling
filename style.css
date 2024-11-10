@@ -28,7 +28,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 0 40px;
+    padding: 0 220px;
 }
 
 .section-one .gif {
@@ -127,6 +127,7 @@ body {
 .section-three .gif {
     position: sticky;
     bottom: 10px;
+    padding: 0 220px;
 }
 
 /* Section Four */
